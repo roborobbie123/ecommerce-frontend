@@ -4,6 +4,9 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProductService } from './services/product.service';
+
 
 @NgModule({
   declarations: [
@@ -12,10 +15,12 @@ import { ProductListComponent } from './components/product-list/product-list.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
