@@ -4,7 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: false,
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  host: {
+    '[class]': 'null'
+  }
 })
 export class AppComponent {
   title = 'angular-ecommerce';
